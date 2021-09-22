@@ -6,7 +6,7 @@ def main():
 
 	templ = Template("you're watching ${title} by ${author}")
 
-	str2 = templ.substitute(title="advanced python", author = "joe marini")
+	str2 = templ.substitute(title="advanced python", author="joe marini")
 	print(str2)
 
 	data = {
