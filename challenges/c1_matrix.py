@@ -3,22 +3,40 @@ import math
 
 def main():
 	vector = defineVector()
-	print(vector)
+	indexOfGreaterValue = getIndexOfGreaterValueFromVector(vector)
+	average = getAverageFromVector(vector)
+	print(vector, indexOfGreaterValue, average)
 
 
 
 def defineVector():
 	newVector = np.array([0.0] * 10)
-	for index, value in enumerate(newVector):
+	for index, v in enumerate(newVector):
 		newVector[index] = associateValueForIndex(index)
 	return newVector
 
 
 
+def getIndexOfGreaterValueFromVector(vector):
+	greaterValue = np.max(vector)
+	indexOfGreaterValue = np.where(vector == greaterValue)
+	return int(indexOfGreaterValue[0])
+
+
+
+def getAverageFromVector(vector):
+	totalSum = 0
+	for value in vector:
+		totalSum += value
+	average = round(totalSum / len(vector), 2)
+	return average
+
+
+
 def associateValueForIndex(x):
-		if x % 2 == 0:
-			return defineValuesForEvenIndex(x)
-		return defineValuesForOddIndex(x)
+	if x % 2 == 0:
+		return defineValuesForEvenIndex(x)
+	return defineValuesForOddIndex(x)
 
 
 
