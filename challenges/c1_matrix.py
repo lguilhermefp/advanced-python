@@ -23,12 +23,12 @@ def associateValueForIndex(x):
 
 
 def defineValuesForEvenIndex(x):
-	return pow(3, x) + 7*math.factorial(x)
+	return 3**x + 7*math.factorial(x)
 
 
 
 def defineValuesForOddIndex(x):
-	return pow(2, x) + 4*math.log(x)
+	return 2**x + 4*math.log(x)
 
 
 
